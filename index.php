@@ -1,5 +1,9 @@
 <?php 
 
-echo "Hello World";
+// echo "Hello World";
 
-require "operators.php";
+// require "operators.php";
+
+// require "constant.php";
+
+require "condition.php";
