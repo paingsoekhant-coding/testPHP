@@ -6,4 +6,10 @@
 
 // require "constant.php";
 
-require "condition.php";
+// require "condition.php";
+
+// require "array.php";
+
+// require "function.php";
+
+require "object.php";
