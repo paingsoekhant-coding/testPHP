@@ -21,14 +21,8 @@ class Student
     }
 }
 
-$student = new Student(); //object instantiation
+ $student = new Student(); //object or instantiation
 
 echo $student->greet();
-
-//declare class 
-//object 
-//instantiation
-//methods 
-//properties
 
 
