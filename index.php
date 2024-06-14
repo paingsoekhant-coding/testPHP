@@ -2,6 +2,9 @@
 
  require "encapsulation.php";
 
+ require "pdoOOP.php";
+$db->dbConnect();
+
 // require "inheritance.php";
 
 interface Code 
