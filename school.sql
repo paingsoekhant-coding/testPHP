@@ -23,7 +23,7 @@ INSERT INTO `USERS` (`name`,`email`,`gender`,`dob`,`age`) VALUES
 ('mary','mary@gmail.com','female','1998-05-01' , 26),
 ('Jame','jame@gmail.com','male','1998-08-01' , 23);
 
--- read
+-- read all data
 SELECT * FROM `USERS`;
 SELECT `name`,`email`,`gender`,`dob`,`age` FROM `USERS`;
 
