@@ -4,9 +4,7 @@
 
 echo "<pre/>";
 delete();
-// update();
-// edit("40");
-// read();
+
 function create()
 {
     try{
@@ -126,11 +124,10 @@ function edit($id){
    try{
       $pdo = new PDO("mysql:host=localhost;dbname=school","root","");
 
-      $statement = $pdo->query("DELETE FROM `Students` WHERE `id` = '3'");
+      $statement = $pdo->query("DELETE FROM Student WHERE id = 1");
 
       die(var_dump($statement));
 
-      // $student = $statement->fetch(PDO::FETCH_OBJ);
       if($statement){
          echo "Delete Successful";
       }else{
