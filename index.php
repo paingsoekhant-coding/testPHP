@@ -27,7 +27,7 @@ $getStudents = $data->read();
         <div class="row justify-content-center">
             <div class="col-8 mt-5">
                 <h4>Student List</h4>
-                <a href="" class="btn btn-primary mb-2">Create New Student</a>
+                <a href="createPage.php" class="btn btn-primary mb-2">Create New Student</a>
                 <table class="table border">
                     <thead>
                         <tr>

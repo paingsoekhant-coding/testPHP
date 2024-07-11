@@ -8,11 +8,19 @@ class BL_student extends Database
     {
         $pdo = $this->connect();
 
-        $newStudent = $pdo->query("INSERT INTO students (name ,email ,gender ,dob ,age) VALUES
-        ('$name','$email','$gender','$dob' , $age)");
+        $newStudent = $pdo->prepare("INSERT INTO students (name ,email ,gender ,dob ,age) VALUES
+        (:name , :email , :gender , :dob , :age)");
 
-        if($newStudent){
+        $newStudent->bindParam(':name',$name);
+        $newStudent->bindParam(':email',$email);
+        $newStudent->bindParam(':gender',$gender);
+        $newStudent->bindParam(':dob',$dob);
+        $newStudent->bindParam(':age',$age);
+
+        if($newStudent->execute()){
             echo "New Student Create Successful!";
+        }else{
+            echo "New Student Create Failed!";
         }
     }
 

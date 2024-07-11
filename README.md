@@ -42,6 +42,8 @@ abstract method
 <!-- single file run -->
 php -S localhost:8000 
 
+bindParam()
+
 
 
 
