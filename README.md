@@ -10,6 +10,8 @@ properties
 constructor => between Class and Object 
 inheritance 
 
+Hello I am Myat Noe Oo!!!
+
 ## abstraction
 
 ## encapsulation 
