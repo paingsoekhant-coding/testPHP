@@ -44,6 +44,12 @@ php -S localhost:8000
 
 bindParam()
 
+click => isDelete{change true};
+
+if(isDelete == true )
+{
+    hidden;
+}
 
 
 

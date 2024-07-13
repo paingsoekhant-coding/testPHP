@@ -51,8 +51,8 @@ $getStudents = $data->read();
                            <td><?php echo $s->dob ?></td>
                            <td><?php echo $s->age ?></td>
                            <td>
-                            <a href="" class="btn btn-warning">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="editPage.php?id=<?php echo $s->id; ?>" class="btn btn-warning">Edit</a>
+                            <a href="delete.php?id=<?php echo $s->id; ?>" class="btn btn-danger">Delete</a>
                            </td>
                         </tr>
                         <?php endforeach; ?>

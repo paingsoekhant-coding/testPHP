@@ -45,34 +45,49 @@ class BL_student extends Database
     {
         $pdo = $this->connect();
 
-        $statement = $pdo->query("SELECT * FROM `Students` WHERE `id` = $id");
+        $statement = $pdo->prepare("SELECT * FROM `Students` WHERE `id` = :id");
 
+        $statement->bindParam(':id',$id);
+
+       if( $statement->execute()){
         $student = $statement->fetch(PDO::FETCH_OBJ);
+        return $student;
+       };
 
-        echo $student->id . "|" .$student->name. " |" . $student->email . "|" . $student->gender . "|" . $student->dob . "|" . $student->age. "<br>";
+        // echo $student->id . "|" .$student->name. " |" . $student->email . "|" . $student->gender . "|" . $student->dob . "|" . $student->age. "<br>";
 
     }
 
-    public function update($id ,$name , $email)
+    public function updateStudent($id ,$name , $email,$gender, $dob , $age)
     {
         $pdo = $this->connect();
 
-        $statement = $pdo->query("UPDATE `Students` SET `name` = '$name',`email` = '$email' WHERE `id` = $id");
+        $statement = $pdo->prepare("UPDATE `Students` SET `name` = :name,`email` = :email , `gender` = :gender , `dob` = :dob , `age` = :age WHERE `id` = :id");
 
-        if($statement){
-     
-           echo "Update Successful";
+        $statement->bindParam(':id',$id);
+        $statement->bindParam(':name',$name);
+        $statement->bindParam(':email',$email);
+        $statement->bindParam(':gender',$gender);
+        $statement->bindParam(':dob',$dob);
+        $statement->bindParam(':age',$age);
+
+        if($statement->execute()){
+            echo " Student Update Successful!";
         }else{
-           echo "Update Failed";
+            echo " Student Update Failed!";
         }
+
     }
+
 
     public function delete($id)
     {
         $pdo = $this->connect();
-        $statement = $pdo->query("DELETE FROM Students WHERE id = $id");
+        $statement = $pdo->prepare("DELETE FROM Students WHERE id = :id");
 
-        if($statement){
+        $statement->bindParam(':id',$id);
+
+        if($statement->execute()){
 
            echo "Delete Successful";
         }
