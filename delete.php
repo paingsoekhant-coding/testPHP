@@ -1,7 +1,5 @@
 <?php 
 
-
-
 require_once "businessLogic.php";
 
 $statement = new BL_student;
